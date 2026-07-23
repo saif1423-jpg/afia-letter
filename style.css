@@ -1,0 +1,521 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:linear-gradient(135deg,#F9F4F1,#F3E8F6);
+
+    color:#3F352D;
+
+    font-family:"Amiri",serif;
+
+    overflow-x:hidden;
+
+}
+
+#intro{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.intro-box{
+
+    text-align:center;
+
+    max-width:700px;
+
+    padding:40px;
+
+}
+
+h1{
+
+    font-family:"Aref Ruqaa",serif;
+
+    font-size:72px;
+
+    color:#43322E;
+
+    margin-bottom:25px;
+
+    font-weight:700;
+
+}
+
+.intro-box p{
+
+    font-family:"Amiri",serif;
+
+    font-size:34px;
+
+    line-height:2;
+
+    color:#6B5A52;
+
+    margin-bottom:70px;
+
+}
+
+button{
+
+    margin-top:50px;
+
+    background:#8A6C56;
+
+    color:white;
+
+    border:none;
+
+    padding:18px 45px;
+
+    border-radius:50px;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+button:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ===========================
+   صفحة الرسالة
+=========================== */
+
+/* ===========================
+   صفحة الرسالة
+=========================== */
+
+#letter-page{
+
+    display:none;
+
+    min-height:100vh;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:80px 20px;
+
+    animation:letterFade .9s ease;
+
+}
+
+#letter-page.show{
+
+    display:flex;
+
+}
+
+#intro.hide{
+
+    display:none;
+
+}
+
+@keyframes letterFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* الورقة */
+
+.paper{
+
+    position:relative;
+
+    width:min(900px,92vw);
+
+    background:#FFFDF8;
+
+    border-radius:18px;
+
+    padding:80px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.12);
+
+    overflow:hidden;
+
+}
+
+/* خطوط الدفتر */
+
+.paper{
+
+    background:
+    linear-gradient(
+        rgba(255,253,248,.96),
+        rgba(255,253,248,.96)
+    );
+
+    border:1px solid #EFE3D8;
+
+}
+
+/* الهامش البنفسجي */
+
+.paper::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    right:70px;
+
+    width:2px;
+
+    height:100%;
+
+    background:#D8B6D9;
+
+}
+
+.paper-content{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.paper h2{
+
+    font-family:"Aref Ruqaa",serif;
+
+    font-size:58px;
+
+    color:#6D4D8B;
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.paper p{
+
+    font-family:"Amiri",serif;
+
+    font-size:29px;
+
+    line-height:48px;
+
+    margin-bottom:22px;
+
+    text-align:justify;
+
+    text-indent:35px;
+
+    color:#433B36;
+
+    letter-spacing:.2px;
+
+}
+
+.love-word{
+
+    font-family:"Aref Ruqaa",serif;
+
+    font-size:88px;
+
+    color:#7A4B9E;
+
+    text-align:center;
+
+    margin:60px 0;
+
+}
+
+.paper hr{
+
+    border:none;
+
+    border-top:1px solid #DDD;
+
+    margin:60px 0;
+
+}
+
+.paper small{
+
+    display:block;
+
+    text-align:center;
+
+    font-size:18px;
+
+    line-height:2.2;
+
+    color:#777;
+
+}
+
+.signature{
+
+    margin-top:70px;
+
+    text-align:left;
+
+    font-family:"Aref Ruqaa",serif;
+
+    font-size:48px;
+
+    color:#6D4D8B;
+
+}
+
+.paper h2::after{
+
+    content:"❦";
+
+    display:block;
+
+    margin-top:15px;
+
+    font-size:28px;
+
+    color:#C8A6D0;
+
+}
+
+/* ===========================
+   الظرف
+=========================== */
+
+.envelope-wrapper{
+    width:340px;
+    margin:35px auto 0;
+    text-align:center;
+    cursor:pointer;
+}
+
+.envelope{
+    position:relative;
+    width:320px;
+    height:210px;
+    margin:auto;
+    perspective:1000px;
+    filter:drop-shadow(0 18px 28px rgba(75,45,70,.18));
+}
+
+.envelope-back{
+    position:absolute;
+    inset:0;
+    background:#FAF3EA;
+    border:1px solid #E6D8CA;
+    border-radius:12px;
+    z-index:1;
+}
+
+.letter-preview{
+    position:absolute;
+    width:270px;
+    height:175px;
+    left:25px;
+    top:18px;
+    background:#FFFDF8;
+    border:1px solid #EFE3D8;
+    border-radius:8px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding-top:20px;
+    font-family:"Aref Ruqaa",serif;
+    font-size:28px;
+    color:#6D4D8B;
+    z-index:2;
+    transition:
+        transform 1s ease,
+        opacity .6s ease;
+}
+
+.envelope-front{
+    position:absolute;
+    inset:0;
+    background:#F7EEE4;
+    clip-path:polygon(0 38%,50% 72%,100% 38%,100% 100%,0 100%);
+    border-radius:0 0 12px 12px;
+    z-index:4;
+}
+
+.envelope-flap{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:145px;
+    background:#EFE1D4;
+    clip-path:polygon(0 0,100% 0,50% 100%);
+    transform-origin:top;
+    transition:transform .9s ease;
+    z-index:5;
+}
+
+.seal{
+    position:absolute;
+    left:50%;
+    top:80px;
+    transform:translateX(-50%);
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#7A4B9E;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    z-index:6;
+    box-shadow:0 7px 18px rgba(122,75,158,.35);
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
+    animation:sealPulse 1.8s ease-in-out infinite;
+}
+
+.open-hint{
+    margin-top:22px !important;
+    margin-bottom:0 !important;
+    font-size:20px !important;
+    color:#806C78 !important;
+    line-height:1.5 !important;
+}
+
+@keyframes sealPulse{
+    0%,100%{
+        transform:translateX(-50%) scale(1);
+    }
+
+    50%{
+        transform:translateX(-50%) scale(1.07);
+    }
+}
+
+/* حالة فتح الظرف */
+
+.envelope-wrapper.open .envelope-flap{
+    transform:rotateX(180deg);
+    z-index:0;
+}
+
+.envelope-wrapper.open .seal{
+    opacity:0;
+    transform:translateX(-50%) scale(.5);
+    animation:none;
+}
+
+.envelope-wrapper.open .letter-preview{
+    transform:translateY(-125px);
+}
+
+.envelope-wrapper.open .open-hint{
+    opacity:0;
+}
+
+/* حركة ظهور الورقة مطوية ثم انفتاحها */
+
+#letter-page.show .paper{
+    animation:unfoldPaper 1.4s cubic-bezier(.22,.8,.25,1) forwards;
+    transform-origin:center top;
+}
+
+@keyframes unfoldPaper{
+
+    0%{
+        opacity:0;
+        transform:
+            perspective(1400px)
+            translateY(-40px)
+            rotateX(-88deg)
+            scaleY(.08);
+    }
+
+    45%{
+        opacity:1;
+        transform:
+            perspective(1400px)
+            translateY(0)
+            rotateX(-35deg)
+            scaleY(.55);
+    }
+
+    75%{
+        transform:
+            perspective(1400px)
+            rotateX(8deg)
+            scaleY(1.02);
+    }
+
+    100%{
+        opacity:1;
+        transform:
+            perspective(1400px)
+            rotateX(0deg)
+            scaleY(1);
+    }
+
+}
+
+#letter-page .paper-content{
+    opacity:0;
+}
+
+#letter-page.show .paper-content{
+    animation:showLetterContent .7s ease 1s forwards;
+}
+
+@keyframes showLetterContent{
+
+    from{
+        opacity:0;
+        transform:translateY(12px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
